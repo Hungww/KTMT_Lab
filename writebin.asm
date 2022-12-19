@@ -6,11 +6,11 @@
 #dulieu1:	.float	127.03125
 #dulieu2:	.float	16.9375
 
-dulieu1:	.float	0.14453125
-dulieu2:	.float	91.34375
+dulieu1:	.float	2.1592
+dulieu2:	.float	3.314
 
-#dulieu1:	.float	2.253
-#dulieu2:	.float	6.314
+#dulieu1:	.float	7.75
+#dulieu2:	.float	3.25
 
 tenfile:	.asciiz	"DULIEU.BIN"
 fdescr:	.word	0	

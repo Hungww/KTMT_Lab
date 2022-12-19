@@ -131,7 +131,7 @@ DivisionAlgorithm:
     add $s0, $0, $0     #$s0 = Initialization
     add $v1, $0, $0     #$v1 = 0 (Displacement of Decimal Point Initialized)
     li $t8,0       #$s1 = 1 (initialize loop variable to 1)
-
+	
 
 loop:   
     bgtu $t8, 23, check
@@ -162,8 +162,11 @@ return: lw $ra, 4($sp)      #Restoring $ra
     lw $s0, 0($sp)      #Restoring $s0
     lw $s1, 8($sp)      #restoring $s1
     addi $sp, $sp, 8        #Increment in $sp (Stack Pointer)
-    addi $v0, $v0,1 #Restore the last loop
-    jr $ra          #Return	
+    
+    beqz $t0, RE
+    addi $v0, $v0, 1
+    #Restore the last loop
+RE:   jr $ra          #Return	
 	
 	
 	
@@ -181,8 +184,7 @@ loop2:  and $t1, $a0, $t0       #Extracting 23rd-bit of Mantissa
 
 else2:  sll $a0, $a0, 1     #Setting 24th-bit = 1 (Implied)
     move $v0, $a0       #$v0 = Normalized Mantissa
-    
-    move $v1, $t2       #$v1 = Displacement of Decimal Point    
+    move $v1, $t2       #$v1 = Displacement of Decimal Point   
     jr $ra          #Return
 
 
