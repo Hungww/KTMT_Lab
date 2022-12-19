@@ -1,0 +1,2 @@
+-Run writebin.asm to make an input file
+-Run BTLnew.asm to see the result
